@@ -18,6 +18,11 @@ public class StudentController {
         return studentInfoHandler.createMockStudent(number);
     }
 
+    @GetMapping("/random")
+    public Mono<Student> getStudentRandomData(){
+        return studentInfoHandler.randomStudentQuery();
+    }
+
     @GetMapping("/{id}")
     public Mono<Student> getStudentInfo(@PathVariable String id) {
         return studentInfoHandler.getStudentInfo(id);
